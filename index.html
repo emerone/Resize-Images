@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="assets/css/Normalize.css">
+    <link rel="stylesheet" href="assets/css/Style.css">
+</head>
+<body>
+    <form>
+        <div>
+            <i class="uil uil-cloud-upload"></i>
+        </div>
+        <div>
+            <div>
+                <label for="width">Width</label>
+                <input id="width" name="width" type="number" maxlength="5" required placeholder="Width">
+                <div>
+                    <input type="checkbox" name="ratio" id="ratio">
+                    <label for="ratio">Lock aspect ratio</label>
+                </div>
+            </div>
+            <div>
+                <label for="height">Height</label>
+                <input id="height" name="height" type="number" maxlength="5" required placeholder="Height">
+                <div>
+                    <input type="checkbox" name="quality" id="quality">
+                    <label for="quality">Reduce quality</label>
+                </div>
+            </div>
+        </div>
+        <button type="button">Download Image</button>
+    </form>
+    <script src="assets/js/Script.js"></script>
+</body>
+</html>
