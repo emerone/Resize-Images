@@ -1,8 +1,11 @@
           /* Setup */
 
+*{
+  box-sizing: border-box;
+}
+
 *:is(:hover,:focus){
   outline: none;
-  box-sizing: border-box;
 }
 
 body{
@@ -16,7 +19,8 @@ body{
   min-height: 100vh;
 }
 
-input {
+input[type="checkbox" i] {
+  background-color: #333;
 }
 
 
@@ -30,6 +34,17 @@ form {
   flex-direction: column;
   border-radius: .125rem;
   box-shadow: #0003 0 0 2rem;
+  min-width: 28rem;
+}
+
+form > :nth-child(1) {
+  text-align: center;
+  font-size: 8rem;
+  padding: 2rem;
+  border: 2px #0004 dashed;
+}
+
+form > :nth-child(1) > i {
 }
 
 form > div:nth-of-type(2){
@@ -42,6 +57,7 @@ form > div:nth-of-type(2) > div {
   flex-direction: column;
   gap: 1rem;
   padding-block: 1rem;
+  flex: 1;
 }
 
 
@@ -71,7 +87,7 @@ input[type="checkbox"]{
 button[type="button"] {
   font-size: 1.06rem;
   --color: #fffc;
-  --bg: #444;
+  --bg: #555;
   background: var(--bg);
   border: none;
   color: var(--color);
@@ -83,7 +99,7 @@ button[type="button"] {
   opacity: .3;
 }
 
-body:has(form:valid) button[type="button"]:hover {
+body:has(form:valid) button[type="button"]:is(:hover,:focus) {
   --bg: #000c;
 }
 

@@ -19,15 +19,15 @@
         <div>
             <div>
                 <label for="width">Width</label>
-                <input id="width" name="width" type="number" maxlength="5" required placeholder="Width">
+                <input id="width" name="width" type="number" maxlength="4" min="8" max="99999" required placeholder="Width">
                 <div>
-                    <input type="checkbox" name="ratio" id="ratio">
+                    <input type="checkbox" name="ratio" id="ratio" checked>
                     <label for="ratio">Lock aspect ratio</label>
                 </div>
             </div>
             <div>
                 <label for="height">Height</label>
-                <input id="height" name="height" type="number" maxlength="5" required placeholder="Height">
+                <input id="height" name="height" type="number" maxlength="4" min="8" max="99999" required placeholder="Height">
                 <div>
                     <input type="checkbox" name="quality" id="quality">
                     <label for="quality">Reduce quality</label>
