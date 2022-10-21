@@ -25,14 +25,16 @@ downloadFunction = (e) => {
     const a = document.createElement('a')
     const ctx = canvas.getContext('2d')
 
-    const imageQuality = reduceQuality ? 0.70 : 1.0
+    const imageQuality = reduceQuality.checked ? 0.70 : 1.0
 
     canvas.width = inputWidth.value
     canvas.height = inputHeight.value
 
     ctx.drawImage(imgSrc, 0, 0, canvas.width, canvas.height)
-    // document.body.appendChild(canvas)
+
     a.href = canvas.toDataURL("image/jpeg", imageQuality)
+    a.download = new Date().getTime()
+    a.click()
 }
 
 upLoadBox.addEventListener("click", () => {fileInput.click()})
