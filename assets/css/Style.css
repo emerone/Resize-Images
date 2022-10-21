@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 
-*:is(:hover,:focus){
+*:is(:hover, :focus-visible, :focus){
   outline: none;
 }
 
 body{
   font-family: sans-serif;
-  background: #333;
+  background: #92B9BD;
   --color: #000c;
   color: var(--color);
   display: flex;
@@ -19,7 +19,7 @@ body{
   min-height: 100vh;
 }
 
-input[type="checkbox" i] {
+input[type="checkbox"] {
   background-color: #333;
 }
 
@@ -33,18 +33,54 @@ form {
   display: flex;
   flex-direction: column;
   border-radius: .125rem;
-  box-shadow: #0003 0 0 2rem;
-  min-width: 28rem;
+  box-shadow: #0001 0 0 .5rem;
+  width: min(28rem, 100%);
+  margin: 1rem;
 }
 
 form > :nth-child(1) {
   text-align: center;
-  font-size: 8rem;
   padding: 2rem;
+  padding-top: 1rem;
   border: 2px #0004 dashed;
+  border-radius: .125rem;
+  cursor: pointer;
 }
 
-form > :nth-child(1) > i {
+i:first-of-type {
+  font-size: 7rem;
+  color: #9fc5c9;
+}
+
+img {
+  transform: scale(6);
+  max-width: 100%;
+  margin-block: 3rem;
+  max-height: 20rem;
+}
+
+:has(.active) img {
+  transform: scale(1);
+  margin: 0rem;
+}
+
+p {
+  color: var(--color);
+  font-size: 1.1rem;
+  margin: 0%;
+}
+
+:has(.active) p {
+  display: none;
+}
+
+form > :nth-child(1).active {
+  /* border: 2px dashed #92B9BD; */
+  padding: 1rem;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 form > div:nth-of-type(2){
@@ -60,7 +96,12 @@ form > div:nth-of-type(2) > div {
   flex: 1;
 }
 
-
+form > div:nth-of-type(2) > div > :last-child {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  position: relative;
+}
 
 label:not(:last-child) ,input[type="checkbox"] {
   margin-left: .25rem;
@@ -71,8 +112,15 @@ input[type="number"] {
   color: var(--color);
   --bg: #fff2;
   --color: #000c;
-  border: 1px #0004 solid;
+  border: 2px #0003 solid;
+  box-shadow: #0001 0 0 .125rem;
   padding: .8rem 1rem;
+  border-radius: .125rem;
+}
+
+input[type="number"]:is(:hover,:focus-visible) {
+  border:  2px solid #9dc7cb;
+  border-radius: .125rem;
 }
 
 input[type="number"]::placeholder {
@@ -80,27 +128,35 @@ input[type="number"]::placeholder {
   color: var(--color);
 }
 
+/* checkbox style */
+
 input[type="checkbox"]{
   cursor: pointer;
+  width: 1rem;
+  accent-color: #9fc5c9;
 }
+
+/* last button */
 
 button[type="button"] {
   font-size: 1.06rem;
-  --color: #fffc;
-  --bg: #555;
+  --color: #fff;
+  --bg: #9fc5c9;
   background: var(--bg);
   border: none;
   color: var(--color);
   padding: .8rem 1rem;
   width: min(100%, 20rem);
   margin: auto;
-  cursor: pointer;
   transition: all .3s ease ;
   opacity: .3;
+  box-shadow: #0001 0 0 .25rem;
 }
 
-body:has(form:valid) button[type="button"]:is(:hover,:focus) {
-  --bg: #000c;
+body:has(form:valid) button[type="button"]:is(:hover,:focus-visible) {
+  --bg: #637d80;
+  --color: #fffc;
+  cursor: pointer;
 }
 
 body:has(form:valid) button[type="button"] {
@@ -117,24 +173,6 @@ body:has(form:valid) button[type="button"] {
 }
 
           /* Responsive */
-
-@media screen and (max-width:1024px) {
-  html{
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width:826px) {
-  html{
-    font-size: 3px;
-  }
-}
-
-@media screen and (max-width:632px) {
-  html{
-    font-size: 3px;
-  }
-}
 
 @media screen and (min-width:calc(1920px * calc(1 + 1/2) - 100px)) {
   html{

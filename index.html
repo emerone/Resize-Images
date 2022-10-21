@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="assets/css/Style.css">
 </head>
 <body>
-    <form>
+    <form autocomplete="off">
         <div>
-            <i class="uil uil-cloud-upload"></i>
+            <input type="file" accept="image/*" hidden>
+            <img src="" class="uil uil-cloud-upload"></img>
+            <p>Browse File to Upload</p>
         </div>
         <div>
             <div>
@@ -30,7 +32,7 @@
                 <input id="height" name="height" type="number" maxlength="4" min="8" max="99999" required placeholder="Height">
                 <div>
                     <input type="checkbox" name="quality" id="quality">
-                    <label for="quality">Reduce quality</label>
+                    <label for="quality">Reduce quality 30%</label>
                 </div>
             </div>
         </div>
