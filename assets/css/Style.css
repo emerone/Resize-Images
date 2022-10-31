@@ -75,7 +75,7 @@ p {
 }
 
 form > :nth-child(1).active {
-  /* border: 2px dashed #92B9BD; */
+  border: 2px dashed #92B9BD;
   padding: 1rem;
   align-self: center;
   display: flex;

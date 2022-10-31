@@ -41,11 +41,11 @@ upLoadBox.addEventListener("click", () => {fileInput.click()})
 
 fileInput.addEventListener("change", changeFile)
 
-inputWidth.addEventListener('keyup', () => {
+inputWidth.addEventListener('input', () => {
     height = aspectRatio.checked ? inputWidth.value / ogRation : inputHeight.value ;
     inputHeight.value = Math.floor(height)
 })
-inputHeight.addEventListener('keyup', () => {
+inputHeight.addEventListener('input', () => {
     width = aspectRatio.checked ? inputHeight.value / ogRation : inputWidth.value  
     inputWidth.value = Math.floor(width)
 })
